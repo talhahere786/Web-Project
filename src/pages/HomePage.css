@@ -1,0 +1,124 @@
+/* Hero Section */
+.hero {
+    background: url('your-hero-image.jpg') no-repeat center center/cover;
+    color: Black;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-primary {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-secondary {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Services Section */
+  .services {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .services h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .service-card {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .service-card p {
+    font-size: 16px;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .testimonial-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .testimonial-card {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
