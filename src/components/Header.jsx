@@ -136,7 +136,7 @@ function Header() {
 
         <Flex align="center" display={{ base: 'none', md: 'flex' }} ml={4}>
         <Button
-          bg="red"
+          bg="red.500"
           color="white"
           leftIcon={<GoArrowDownRight />}
           width={{ base: "800%", sm: "120px", md: "180px" }}  
@@ -158,10 +158,11 @@ function Header() {
         bg="red.500"
         color="white"
         fontSize={{ base: 'sm', sm: 'md' }} 
-        padding={{ base: '1px 2px', sm: '3px 4px' }} 
+        padding={{ base: '0.5px 2px', sm: '1px 2px' }} 
         borderWidth={{ base: '1px', sm: '2px' }}
         borderColor="white" 
         borderRadius="md" 
+
       >
         <FiAlignJustify />
       </Button>
@@ -205,6 +206,8 @@ function Header() {
     fontSize={{ base: 'xs', sm: 'md' }} 
     color="black"
     mt={4}
+    ml={4}
+    
   >
     {['Home', 'Pages', 'Donations', 'Portfolio', 'Blog', 'Contact'].map((item) => (
       <Text

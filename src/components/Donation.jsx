@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Text, VStack, Flex, chakra, Button, Input, Image } from "@chakra-ui/react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const Donation = () => {
     const [donationAmount, setDonationAmount] = useState("");
@@ -23,7 +21,7 @@ const Donation = () => {
 
   return (
     <>
-    <Header />
+   
     <Flex
       direction="row"
       align="center"
@@ -33,12 +31,12 @@ const Donation = () => {
       mx={{ base: 4, lg: 180 }}
       height="auto"
       wrap="wrap"
-      my={8}
+       mt={{base:39,sm:39,md:23, lg:8}}
     >
     
       <Box flex="1" maxW={{ base: "100%", md: "30%" }} 
       height={{ base: "300px", md: "400px" }} overflow="hidden"
-      display={{ base: "none", sm: "block" }}>
+      display={{ base: "none", md: "block" }}>
         <Image
           src="images/img_1.png"
           alt="Donation Image"
@@ -155,7 +153,7 @@ const Donation = () => {
         </VStack>
       </Box>
     </Flex>
-     <Footer />
+     
      </>
   );
 };

@@ -47,7 +47,7 @@ import Success from "./components/Success";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-
+import DonationPage from "./pages/DonationPage"
 function App() {
   return (
     <>
@@ -59,11 +59,13 @@ function App() {
         <Routes>
          
           {/* <Route path="/" element={<HomePage />} /> */}
-          <Route path="/" element={<Donation />} />
+          <Route path="/" element={<DonationPage />} />
           <Route path="/success" element={<Success />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/payment" element={<Payment />} />
+
+
           {/* <Route path="/contact" element={<ContactUsForm />} />
           <Route path="/predict" element={<PredictionForm />} />
           <Route path="/form" element={<Form />} />
