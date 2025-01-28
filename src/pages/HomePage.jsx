@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "../pages/Header";
+import Footer from "../pages/Footer";
 import "./HomePage.css"; // Add custom CSS for the home page here
 
 const Home = () => {
