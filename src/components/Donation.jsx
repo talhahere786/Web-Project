@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Text, VStack, Flex, chakra, Button, Input, Image } from "@chakra-ui/react";
-import Header from "../pages/Header";
-import Footer from "../pages/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Donation = () => {
     const [donationAmount, setDonationAmount] = useState("");

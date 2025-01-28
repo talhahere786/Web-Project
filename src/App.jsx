@@ -38,15 +38,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/LoginPage";
 import Signup from "./pages/SignupPage";
 import Payment from "./components/payment";
-import Donation from "./pages/Donation";
-import Success from "./pages/Success";
+import Donation from "./components/Donation";
+import Success from "./components/Success";
 // import PredictionForm from "./components/PredictionForm/PredictionForm";
 // import ContactUsForm from "./components/Contact Us/Contact";
 // import Form from "./components/Verification Form/Form";
 // import AboutUs from "./components/About US/AboutUs";
 import HomePage from "./pages/HomePage";
-import Footer from "./pages/Footer";
-import Header from "./pages/Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
