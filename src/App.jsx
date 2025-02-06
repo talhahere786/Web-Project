@@ -48,6 +48,10 @@ import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import DonationPage from "./pages/DonationPage"
+import Dashboard from "./components/Dashboard";
+import DonarDashboardPage from "./pages/DonarDashboardPage";
+import AboutUs from "./components/AboutUs";
+
 function App() {
   return (
     <>
@@ -55,15 +59,19 @@ function App() {
     <Router>
     
       {/* <Header /> */}
+      <DonarDashboardPage/>
+      {/* <AboutUs/> */}
       <div className="App">
         <Routes>
          
+          
           {/* <Route path="/" element={<HomePage />} /> */}
-          <Route path="/" element={<DonationPage />} />
+          {/* <Route path="/" element={<DonationPage />} />
           <Route path="/success" element={<Success />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<Payment />} /> */}
+
 
 
           {/* <Route path="/contact" element={<ContactUsForm />} />
