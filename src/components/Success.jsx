@@ -1,12 +1,70 @@
 import React from "react";
 import { Box, Text, Button, Center } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 // Motion Components
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 
 const Success = () => {
+  const location = useLocation();
+  const sessionId = new URLSearchParams(location.search).get("session_id");
+  const [paymentStatus, setPaymentStatus] = useState(null);
+  const [Amount, setAmount] = useState(null);
+  console.log(sessionId);
+const token = localStorage.getItem("token"); // Get the token from localStorage or sessionStorage
+if (!token) {
+  alert("You need to log in first.");
+  return;
+}
+// Send a POST request with donation data
+const body = {
+  amount: Amount,
+  status: paymentStatus, // Or dynamically set it based on payment result
+};
+  useEffect(() => {
+    const fetchPaymentDetails = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/payment/status?session_id=${sessionId}`
+        );
+        const data = await response.json(); // Parse the JSON response
+        setPaymentStatus(data.paymentStatus); // Set the payment status
+        setAmount(data.amount); // Set donation amount
+        console.log("Payment Status from API:", data.paymentStatus);
+        console.log("Donation Amount from API:", data.amount);
+        addDonation();
+      } catch (error) {
+        console.error("Error fetching payment status:", error);
+      }
+    };
+    const addDonation = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/donate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(body),
+        });
+        if (!response.ok) {
+          console.error("Donation failed", await response.text());
+          return;
+        }
+        const donationResponse = await response.json();
+        console.log("Donation successful", donationResponse);
+        // Handle the response (e.g., show a success message)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    if (sessionId) {
+      fetchPaymentDetails(); // Fetch payment details if session ID exists
+      
+    }
+  }, [sessionId, token, body]);
   return (
     <Center h="100vh" bg="gray.50">
       <MotionBox
@@ -55,9 +113,8 @@ const Success = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Donation Successful!
+          {paymentStatus}
         </MotionBox>
-
         {/* Description */}
         <MotionText
           mt={4}
@@ -94,4 +151,3 @@ const Success = () => {
 };
 
 export default Success;
-

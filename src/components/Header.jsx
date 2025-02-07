@@ -14,10 +14,10 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
+    <div>
     
       <Flex
-        as="header"
+        // as="header"
         bg="red.500"
         color="white"
         px={{ base: 4, md: 6 }}
@@ -28,6 +28,7 @@ function Header() {
         mb={{ base: 1, md: 0 }}
         roundedBottom={15}
         direction={{ base: 'column', md: 'row' }}
+        
       >
       
         <Flex
@@ -84,7 +85,7 @@ function Header() {
 
       </Flex>
       <Flex
-          as="header"
+          // as="header"
           bg="white"
           color="black"
           px={{ base: 4, md: 10 }} 
@@ -98,6 +99,7 @@ function Header() {
           direction="row"
           textAlign={{ base: 'center', md: 'left' }}
           position="relative"
+          
           >
           <Flex
             align="center"
@@ -222,7 +224,7 @@ function Header() {
   </VStack>
 </Box>
 
-    </>
+    </div>
   );
 }
 

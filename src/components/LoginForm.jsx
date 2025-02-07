@@ -29,7 +29,7 @@ export default function LoginForm() {
   
     try {
       // Send data to backend
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("http://localhost:5000/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,8 +40,12 @@ export default function LoginForm() {
       const data = await response.json();
       if (response.ok) {
         alert(`Welcome !!!`); // Show success message
+      console.log("Token:",data.token);
+       localStorage.setItem("token", data.token);
+         console.log(localStorage.getItem("token"));
       } else {
         setErrorMessage(data.message); // Set the error message from backend
+        console.log("Token:", localStorage.getItem("token"));
       }
     } catch (error) {
       console.error("Error:", error);
