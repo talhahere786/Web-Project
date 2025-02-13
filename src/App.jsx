@@ -17,6 +17,7 @@ import Dashboard from "./components/Dashboard";
 import DonarDashboardPage from "./pages/DonarDashboardPage";
 import AboutUs from "./components/AboutUs";
 import AboutUsPage from "./pages/AboutUsPage";
+import VerificationPage from "./pages/VerificationPage";
 
 function App() {
   return (
@@ -25,13 +26,17 @@ function App() {
     <Router>
     
       {/* <Header /> */}
+      {/* <Footer/> */}
       {/* <DonarDashboardPage/> */}
-      <AboutUsPage/>
+      {/* <AboutUsPage/> */}
+      <VerificationPage/>
+      
       <div className="App">
         <Routes>
          
           
           {/* <Route path="/" element={<HomePage />} /> */}
+          
           {/* <Route path="/" element={<DonationPage />} />
           <Route path="/success" element={<Success />} />
           <Route path="/login" element={<Login />} />
