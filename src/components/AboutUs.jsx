@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import { TiTickOutline } from "react-icons/ti";
 import { Avatar } from "@/components/ui/avatar";
 
+
 import { Box, Flex, Image,  AccordionItem,
   AccordionItemContent,
   AccordionItemTrigger,
@@ -25,7 +26,8 @@ function AboutUs() {
       
     <>
     
-      <Banner />
+    <Banner title="About Us" path="Home / AboutUs" />
+      
       <Flex 
         direction={{ base: "column", md: "row" }} 
         align="center" 
@@ -57,8 +59,12 @@ function AboutUs() {
           py={{ base: 4, md: 0 }}
         //  mx={{ md: 12 }}
         >
-          <Text fontSize={{ base: "24px", md: "26px" }} fontWeight="bold" mb={2}>
-            Helping is Great Virtue for Every Human
+         <Text textDecoration="underline" color="yellow.400">
+          About Risehands
+        </Text>
+
+          <Text fontSize={{ base: "24px", md: "26px" }} fontWeight="bold" mb={2} color="black">
+            Helping is Great Virtue for <br/> Every Human
           </Text>
           <Text fontSize={{ base: "sm", md: "md" }} color="gray.600" mb={4}>
             It has been determined through research that when we feel to help,
@@ -68,15 +74,15 @@ function AboutUs() {
 
           {/* Charity List with Tick Icons */}
           <Flex direction="column" align="start">
-            <Text display="flex" alignItems="center" mb={2} _hover={{ color: "orange.600" }}>
+            <Text display="flex" alignItems="center" mb={2} _hover={{ color: "orange.600" }} color="black">
               <TiTickOutline style={{ color: "red", fontSize: "20px", marginRight: "8px" }} />
               Charity For Medical & Health
             </Text>
-            <Text display="flex" alignItems="center" mb={2} _hover={{ color: "orange.600" }}>
+            <Text display="flex" alignItems="center" mb={2} _hover={{ color: "orange.600" }} color="black">
               <TiTickOutline style={{ color: "red", fontSize: "20px", marginRight: "8px" }} />
               Charity For Education to Poor People
             </Text>
-            <Text display="flex" alignItems="center" mb={4} _hover={{ color: "orange.600" }}>
+            <Text display="flex" alignItems="center" mb={4} _hover={{ color: "orange.600" }} color="black">
               <TiTickOutline style={{ color: "red", fontSize: "20px", marginRight: "8px" }} />
               Charity For Clean Water
             </Text>
@@ -108,8 +114,11 @@ function AboutUs() {
 
       {/* Right Side Accordion */}
       <Box flex="1" textAlign="left">
-  <Text fontSize={{ base: "24px", md: "28px" }} fontWeight="bold" mb={4}>
-    Have Any Questions on Your Minds !
+      <Text textDecoration="underline" color="yellow.400">
+          Ask Questions
+        </Text>
+  <Text fontSize={{ base: "24px", md: "28px" }} fontWeight="bold" mb={4} color="black">
+    Have Any Questions <br/>on Your Minds !
   </Text>
   <AccordionRoot collapsible defaultValue={["b"]}>
     {items.map((item, index) => (
@@ -148,8 +157,11 @@ function AboutUs() {
 >
   {/* Heading */}
   <Box textAlign="center" mb={6}>
-    <Text fontSize={{ base: "24px", md: "28px" }} fontWeight="bold">
-      We Have a Volunteer Team
+  <Text textDecoration="underline" color="yellow.400">
+          Meet Our Volunteers
+        </Text>
+    <Text fontSize={{ base: "24px", md: "28px" }} fontWeight="bold" color="black">
+      We Have a Volunteer Team<br/>
       Meet Our Professionals
     </Text>
   </Box>
@@ -160,91 +172,180 @@ function AboutUs() {
     gap={8}
     justify="center"
     align="center"
-    w="full" // Ensure the Flex container stretches to full width
-    px={{ base: 4, md: 8 }} // Added padding for left and right on small and medium screens
+    w="full" 
+    px={{ base: 4, md: 8 }} 
   >
     {/* Team Member 1 */}
-    <Box key="1" textAlign="center">
-      <Avatar
-        name="Warren A. Mundt"
-        src="images/avatar_1.jpg" // Replace with the correct image path
-        
-        size="2xl"
-        mb={4}
-      />
-      <Text fontSize="lg" fontWeight="semibold" mb={1}>
-        Warren A. Mundt
-      </Text>
-      <Text fontSize="md" color="orange.400" mb={2}>
-        Manager Head
-      </Text>
-      <Text fontSize="11px" color="gray.600" mb={2}>
-        Offer resources for continuous learning and skill development, including online courses and workshops.
-      </Text>
-    </Box>
+    <Box textAlign="center" position="relative" p={6}>
+  
+  <Box
+    position="absolute"
+    top="-5px"
+    left="50%"
+    transform="translateX(-50%)"
+    w="100px"
+    h="100px"
+    bgImage="url('/shape-1.png')"
+    bgSize="contain"
+    bgRepeat="no-repeat"
+    bgPosition="center"
+    zIndex={1} 
+  />
 
-    {/* Team Member 2 */}
-    <Box key="2" textAlign="center">
-      <Avatar
-        name="Michael G. Wood"
-        src="images/avatar_2.jpg" // Replace with the correct image path
-        size="2xl"
-        mb={4}
-      />
-      <Text fontSize="lg" fontWeight="semibold" mb={1}>
-        Michael G. Wood
-      </Text>
-      <Text fontSize="md" color="orange.400" mb={2}>
-        General Manager
-      </Text>
-      <Text fontSize="11px" color="gray.600" mb={2}>
-        Provide tips, articles, or expert advice on maintaining a healthy work-life balance, managing stress.
-      </Text>
-    </Box>
+  <Avatar
+    name="Warren A. Mundt"
+    src="images/avatar_1.jpg"
+    size="2xl"
+    mb={4}
+    position="relative"
+    zIndex={2} // Ensure Avatar is on top
+  />
 
-    {/* Team Member 3 */}
-    <Box key="3" textAlign="center">
-      <Avatar
-        name="Donald K. Gustaz"
-        src="images/avatar_3.jpg" // Replace with the correct image path
-        size="2xl"
-        mb={4}
-      />
-      <Text fontSize="lg" fontWeight="semibold" mb={1}>
-        Donald K. Gustaz
-      </Text>
-      <Text fontSize="md" color="orange.400" mb={2}>
-        Volunteer
-      </Text>
-      <Text fontSize="11px" color="gray.600" mb={2}>
-        Workshops or seminars on organizational development strategies, succession planning.
-      </Text>
-    </Box>
+ 
+  <Text fontSize="lg" fontWeight="semibold" mb={1} color="black">
+    Warren A. Mundt
+  </Text>
+
+  <Text fontSize="md" color="orange.400" mb={2}>
+    Manager Head
+  </Text>
+
+  <Text fontSize="11px" color="gray.600" mb={2}>
+    Offer resources for continuous learning and skill development, including online courses and workshops.
+  </Text>
+</Box>
+
+    <Box textAlign="center" position="relative" p={6}>
+  
+  <Box
+    position="absolute"
+    top="-5px"
+    left="50%"
+    transform="translateX(-50%)"
+    w="100px"
+    h="100px"
+    bgImage="url('/shape-1.png')"
+    bgSize="contain"
+    bgRepeat="no-repeat"
+    bgPosition="center"
+    zIndex={1} 
+  />
+
+  <Avatar
+    name="Michael G. Wood"
+    src="images/avatar_2.jpg"
+    size="2xl"
+    mb={4}
+    position="relative"
+    zIndex={2} 
+  />
+
+ 
+  <Text fontSize="lg" fontWeight="semibold" mb={1} color="black">
+    Michael G. Wood
+  </Text>
+
+ 
+  <Text fontSize="md" color="orange.400" mb={2}>
+    General Manager
+  </Text>
+
+ 
+  <Text fontSize="11px" color="gray.600" mb={2}>
+    Provide tips, articles, or expert advice on maintaining a healthy work-life balance, managing stress.
+  </Text>
+</Box>  
+    <Box textAlign="center" position="relative" p={6}>
+ 
+  <Box
+    position="absolute"
+    top="-5px"
+    left="50%"
+    transform="translateX(-50%)"
+    w="100px"
+    h="100px"
+    bgImage="url('/shape-1.png')"
+    bgSize="contain"
+    bgRepeat="no-repeat"
+    bgPosition="center"
+    zIndex={1}
+  />
+
+ 
+  <Avatar
+    name="Donald K. Gustaz"
+    src="images/avatar_3.jpg"
+    size="2xl"
+    mb={4}
+    position="relative"
+    zIndex={2} 
+  />
+
+  
+  <Text fontSize="lg" fontWeight="semibold" mb={1} color="black">
+    Donald K. Gustaz
+  </Text>
+
+  
+  <Text fontSize="md" color="orange.400" mb={2}>
+    Volunteer
+  </Text>
+
+  <Text fontSize="11px" color="gray.600" mb={2}>
+    Workshops or seminars on organizational development strategies, succession planning.
+  </Text>
+</Box>
+
 
     {/* Team Member 4 */}
-    <Box key="4" textAlign="center">
-      <Avatar
-        name="Roger L. Crawford"
-        src="images/avatar_4.jpg" // Replace with the correct image path
-        size="2xl"
-        mb={4}
-      />
-      <Text fontSize="lg" fontWeight="semibold" mb={1}>
-        Roger L. Crawford
-      </Text>
-      <Text fontSize="md" color="orange.400" mb={2}>
-        Senior Manager
-      </Text>
-      <Text fontSize="11px" color="gray.600" mb={2}>
-        Share ideas for team-building exercises, icebreakers, and retreats to help managers foster strong relationships.
-      </Text>
-    </Box>
+    <Box
+  key="4"
+  textAlign="center"
+  position="relative"
+  p={6} // Padding for spacing
+>
+ 
+  <Box
+    position="absolute"
+    top="-5px" 
+    left="50%"
+    transform="translateX(-50%)"
+    w="100px" 
+    h="100px"
+    bgImage="url('/shape-1.png')" 
+    bgSize="contain"
+    bgRepeat="no-repeat"
+    bgPosition="center"
+    zIndex={1} 
+  />
+
+  {/* Avatar */}
+  <Avatar
+    name="Roger L. Crawford"
+    src="/images/avatar_4.jpg"
+    size="2xl"
+    mb={4}
+    position="relative"
+    zIndex={2} 
+  />
+
+  
+  <Text fontSize="lg" fontWeight="semibold" mb={1} color="black">
+    Roger L. Crawford
+  </Text>
+ 
+  <Text fontSize="md" color="orange.400" mb={2}>
+    Senior Manager
+  </Text>
+
+  <Text fontSize="11px" color="gray.600" mb={2}>
+    Share ideas for team-building exercises, icebreakers, and retreats to help managers foster strong relationships.
+  </Text>
+</Box>
+
+
   </Flex>
 </Flex>
-
-
-
-
     </>
   );
 }
