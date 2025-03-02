@@ -18,6 +18,7 @@ import DonarDashboardPage from "./pages/DonarDashboardPage";
 import AboutUs from "./components/AboutUs";
 import AboutUsPage from "./pages/AboutUsPage";
 import VerificationPage from "./pages/VerificationPage";
+import Families from "./components/Families";
 
 function App() {
   return (
@@ -29,11 +30,16 @@ function App() {
       {/* <Footer/> */}
       {/* <DonarDashboardPage/> */}
       {/* <AboutUsPage/> */}
-      <VerificationPage/>
-      
+    
       <div className="App">
+
+
         <Routes>
          
+       
+        <Route path="/" element={<VerificationPage />} />
+        <Route path="/families" element={<Families />} />
+        
           
           {/* <Route path="/" element={<HomePage />} /> */}
           
