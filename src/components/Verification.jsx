@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Flex, Heading, Text, Input, Button, VStack} from "@chakra-ui/react";
 import { Avatar } from "@/components/ui/avatar";
 import { Checkbox } from "@/components/ui/checkbox"
-
+import { Link } from "react-router-dom";
 function Verification() {
   const [formData, setFormData] = useState({
     FormNumber: "",
@@ -77,7 +77,12 @@ function Verification() {
         
         <VStack align="start">
           <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Dashboard</Text>
-          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Family List</Text>
+        
+          <Link to="/families">
+            <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Manage Family</Text>
+          </Link>
+
+         
           <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Volunteer List</Text>
           <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Donation List</Text>
           <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Setting</Text>
