@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Table } from "@chakra-ui/react";
-import { Box, Flex, Heading, Text, Input, Button, VStack, CloseButton } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Input, Button, VStack } from "@chakra-ui/react";
 import { Avatar } from "@/components/ui/avatar";
 
 function Families() {
@@ -76,29 +76,52 @@ function Families() {
         p={5}
         display={["none", "flex", "flex"]}
         flexDirection="column"
-
       >
         <Flex alignItems="center" gap={4} mb={2}>
           <Avatar name="Jane Smith" src="https://bit.ly/sage-adebayo" />
           <Box>
-            <Text fontWeight="bold" color="black" fontSize={{ base: "10px", sm: "11px", md: "16px", lg: "18px" }}>
+            <Text
+              fontWeight="bold"
+              color="black"
+              fontSize={{ base: "10px", sm: "11px", md: "16px", lg: "18px" }}
+            >
               Jane Smith
             </Text>
           </Box>
         </Flex>
 
         <VStack align="start">
-          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Dashboard</Text>
-          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Manage Family</Text>
-          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Volunteer List</Text>
-          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Donation List</Text>
-          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>Setting</Text>
+          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>
+            Dashboard
+          </Text>
+          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>
+            Manage Family
+          </Text>
+          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>
+            Volunteer List
+          </Text>
+          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>
+            Donation List
+          </Text>
+          <Text color="black" cursor="pointer" _hover={{ color: "gray.400" }}>
+            Setting
+          </Text>
         </VStack>
       </Box>
 
       {/* Main Content */}
-      <Flex direction="column" py={3} ml={["0%", "20%"]} w={["100%", "80%"]} px={4}>
-        <Heading fontSize={{ base: "lg", md: "xl" }} color="black">Families</Heading>
+      <Flex
+        direction="column"
+        py={3}
+        ml={["0%", "20%"]}
+        w={["100%", "80%"]}
+        px={4}
+        bg="white"
+        h={["100%", "100%"]}
+      >
+        <Heading fontSize={{ base: "lg", md: "xl" }} color="black">
+          Families
+        </Heading>
 
         {/* Status Filter Buttons */}
         <Box mt={2} display="flex" flexWrap="wrap">
@@ -109,7 +132,9 @@ function Families() {
             py={1}
             mx={1}
             my={1}
-            onClick={() => setStatusFilter(statusFilter === "Active" ? "" : "Active")}
+            onClick={() =>
+              setStatusFilter(statusFilter === "Active" ? "" : "Active")
+            }
           >
             Active
           </Button>
@@ -120,7 +145,9 @@ function Families() {
             py={1}
             mx={1}
             my={1}
-            onClick={() => setStatusFilter(statusFilter === "Inactive" ? "" : "Inactive")}
+            onClick={() =>
+              setStatusFilter(statusFilter === "Inactive" ? "" : "Inactive")
+            }
           >
             Inactive
           </Button>
@@ -141,52 +168,79 @@ function Families() {
         <Box bg="white" borderRadius="md" boxShadow="md" p={4} overflowX="auto">
           <Table.Root size="sm" minW="600px">
             <Table.Header>
-              <Table.Row>
+              <Table.Row backgroundColor="white">
                 <Table.ColumnHeader color="black">Name</Table.ColumnHeader>
                 <Table.ColumnHeader color="black">Address</Table.ColumnHeader>
-                <Table.ColumnHeader color="black">Verification Date</Table.ColumnHeader>
+                <Table.ColumnHeader color="black">
+                  Verification Date
+                </Table.ColumnHeader>
                 <Table.ColumnHeader color="black">Status</Table.ColumnHeader>
-                <Table.ColumnHeader color="black" display="flex" justifyContent="center">Actions</Table.ColumnHeader>
+                <Table.ColumnHeader
+                  color="black"
+                  textAlign="center"
+                  // display="flex"
+                  // justifyContent="center"
+                >
+                  Actions
+                </Table.ColumnHeader>
               </Table.Row>
             </Table.Header>
             <Table.Body>
               {filteredData.map((row, index) => (
-                <Table.Row key={index}>
+                <Table.Row key={index} backgroundColor="white" color={"black"}>
                   <Table.Cell>
                     {row.isEditing ? (
                       <Input
                         value={row.tempName}
-                        onChange={(e) => handleChange(index, "tempName", e.target.value)}
+                        onChange={(e) =>
+                          handleChange(index, "tempName", e.target.value)
+                        }
                       />
                     ) : (
-                      <Text color="black" fontSize={{ base: "xs", md: "sm" }}>{row.name}</Text>
+                      <Text color="black" fontSize={{ base: "xs", md: "sm" }}>
+                        {row.name}
+                      </Text>
                     )}
                   </Table.Cell>
                   <Table.Cell>
                     {row.isEditing ? (
                       <Input
                         value={row.tempAddress}
-                        onChange={(e) => handleChange(index, "tempAddress", e.target.value)}
+                        onChange={(e) =>
+                          handleChange(index, "tempAddress", e.target.value)
+                        }
                       />
                     ) : (
-                      <Text color="black" fontSize={{ base: "xs", md: "sm" }}>{row.address}</Text>
+                      <Text color="black" fontSize={{ base: "xs", md: "sm" }}>
+                        {row.address}
+                      </Text>
                     )}
                   </Table.Cell>
                   <Table.Cell>
                     {row.isEditing ? (
                       <Input
                         value={row.tempVerificationDate}
-                        onChange={(e) => handleChange(index, "tempVerificationDate", e.target.value)}
+                        onChange={(e) =>
+                          handleChange(
+                            index,
+                            "tempVerificationDate",
+                            e.target.value
+                          )
+                        }
                       />
                     ) : (
-                      <Text color="black" fontSize={{ base: "xs", md: "sm" }}>{row.verificationDate}</Text>
+                      <Text color="black" fontSize={{ base: "xs", md: "sm" }}>
+                        {row.verificationDate}
+                      </Text>
                     )}
                   </Table.Cell>
                   <Table.Cell>
                     {row.isEditing ? (
                       <Input
                         value={row.tempStatus}
-                        onChange={(e) => handleChange(index, "tempStatus", e.target.value)}
+                        onChange={(e) =>
+                          handleChange(index, "tempStatus", e.target.value)
+                        }
                       />
                     ) : (
                       <Button
@@ -200,21 +254,40 @@ function Families() {
                       </Button>
                     )}
                   </Table.Cell>
-                  <Table.Cell display="flex" justifyContent="flex-end" flexWrap="wrap">
-                  {row.isEditing ? (
-                    <Button bg="gray.300" color="black" fontSize={{ base: "xs", md: "sm" }} mx={1} onClick={handleSave}>
-                      Save
+                  <Table.Cell textAlign="center">
+                    {row.isEditing ? (
+                      <Button
+                        bg="gray.300"
+                        color="black"
+                        fontSize={{ base: "xs", md: "sm" }}
+                        mx={1}
+                        onClick={handleSave}
+                      >
+                        Save
+                      </Button>
+                    ) : (
+                      <Button
+                        my={2}
+                        bg="gray.300"
+                        color="black"
+                        fontSize={{ base: "xs", md: "sm" }}
+                        mx={1}
+                        onClick={() => handleEdit(index)}
+                      >
+                        Edit
+                      </Button>
+                    )}
+                    <Button
+                      my={2}
+                      bg="gray.300"
+                      color="black"
+                      fontSize={{ base: "xs", md: "sm" }}
+                      mx={1}
+                      onClick={() => handleDelete(index)}
+                    >
+                      Delete
                     </Button>
-                  ) : (
-                    <Button my={2} bg="gray.300" color="black" fontSize={{ base: "xs", md: "sm" }} mx={1} onClick={() => handleEdit(index)}>
-                      Edit
-                    </Button>
-                  )}
-                  <Button my={2} bg="gray.300" color="black" fontSize={{ base: "xs", md: "sm" }} mx={1} onClick={() => handleDelete(index)}>
-                    Delete
-                  </Button>
-                </Table.Cell>
-
+                  </Table.Cell>
                 </Table.Row>
               ))}
             </Table.Body>
@@ -244,30 +317,50 @@ function Families() {
             display="flex"
             flexDirection="column"
           >
-            <CloseButton position="absolute" top={2} right={2} onClick={() => setEditingIndex(null)} />
-            <Heading fontSize="lg" mb={4} color="black">Edit Family</Heading>
-            <VStack spacing={4} align="stretch">
+            <Button
+              position="absolute"
+              top={2}
+              right={2}
+              onClick={() => setEditingIndex(null)}
+            />
+            <Heading fontSize="lg" mb={4} color="black">
+              Edit Family
+            </Heading>
+            <VStack spacing={4} align="stretch" color={"black"}>
               <Input
                 value={tableData[editingIndex].tempName}
-                onChange={(e) => handleChange(editingIndex, "tempName", e.target.value)}
+                onChange={(e) =>
+                  handleChange(editingIndex, "tempName", e.target.value)
+                }
                 placeholder="Name"
+                color={"black"}
               />
               <Input
                 value={tableData[editingIndex].tempAddress}
-                onChange={(e) => handleChange(editingIndex, "tempAddress", e.target.value)}
+                onChange={(e) =>
+                  handleChange(editingIndex, "tempAddress", e.target.value)
+                }
                 placeholder="Address"
               />
               <Input
                 value={tableData[editingIndex].tempVerificationDate}
-                onChange={(e) => handleChange(editingIndex, "tempVerificationDate", e.target.value)}
+                onChange={(e) =>
+                  handleChange(
+                    editingIndex,
+                    "tempVerificationDate",
+                    e.target.value
+                  )
+                }
                 placeholder="Verification Date"
               />
               <Input
                 value={tableData[editingIndex].tempStatus}
-                onChange={(e) => handleChange(editingIndex, "tempStatus", e.target.value)}
+                onChange={(e) =>
+                  handleChange(editingIndex, "tempStatus", e.target.value)
+                }
                 placeholder="Status"
               />
-              <Button onClick={handleSave} colorScheme="blue" w="100%" >
+              <Button onClick={handleSave} colorScheme="blue" w="100%">
                 Save Changes
               </Button>
             </VStack>

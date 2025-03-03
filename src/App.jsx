@@ -9,6 +9,8 @@ import FileUpload from "./components/fileUpload";
 import ViewFiles from "./components/DisplayFiles";
 import DonationPage from "./pages/DonationPage";
 import Failure from "./components/Failure";
+import Families from "./components/Families"
+import Verification from "./pages/VerificationPage"
 function App() {
   return (
     <div className="App">
@@ -21,6 +23,8 @@ function App() {
         <Route path="/donate" element={<DonationPage />} />
         <Route path="/success" element={<Success />} />
         <Route path="/failed" element={<Failure />} />
+        <Route path="/verification" element={<Verification />} />
+        <Route path="/families" element={<Families />} />
       </Routes>
     </div>
   );

@@ -93,7 +93,7 @@ function Verification() {
         <Heading size="lg" mb={6}>Verification Form</Heading>
 
         {/* Family Form */}
-        <Box bg="white" p={6} borderRadius="lg" boxShadow="md" mt={6}>
+        <Box bg="white" p={6} borderRadius="lg" boxShadow="md" mt={6} color={"black"}>
           <VStack spacing={4} align="stretch">
             <Text color={'black'} fontSize={'30px'}>Family Form:</Text>
            

@@ -8,9 +8,9 @@ import {  Box } from "@chakra-ui/react";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider>
+    <Provider >
       <BrowserRouter>
-        <Box bg="white" >
+        <Box bg="white">
           <App />
         </Box>
       </BrowserRouter>
